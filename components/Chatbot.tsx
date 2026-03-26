@@ -159,7 +159,7 @@ export default function Chatbot() {
                                         return newMsgs;
                                     });
                                 }
-                            } catch (e) {
+                            } catch (e: any) {
                                 // Vô tình cắt đoạn JSON, tiếp tục nối luồng
                             }
                         }
@@ -169,7 +169,7 @@ export default function Chatbot() {
 
             // Xả Loading nốt nếu stream tắt mà không có chữ nào (Do mạng/API lỗi trắng)
             if (!hasStartedReceivingText) setIsLoading(false);
-        } catch (error) {
+        } catch (error: any) {
             console.error(error)
             setMessages((prev) => [
                 ...prev,
